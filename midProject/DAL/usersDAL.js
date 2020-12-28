@@ -8,3 +8,6 @@ exports.getUsers = () =>{
 
 }
 
+exports.setUsers = (data) =>{
+        js.writeFile(`${__dirname}/../DataSource/Users.json`,{"users":data},err => err? err : console.log("success"))
+}

@@ -1,0 +1,33 @@
+<html>
+<body>
+
+    
+    <h1> Search movie </h1>
+    <form action ="/getMenuData/getSearchResults" method="POST">
+        Name:<input type="text" name="name"></br>
+
+        <label for="genre">Choose a Genre :</label>
+        <select name="genre" id="genre">
+          <option value="Drama">Drama</option>
+          <option value="Action">Action</option>
+          <option value="Comedy">Comedy</option>
+        </select>
+    </br>
+
+
+        <label for="language">Choose a Language :</label>
+        <select name="language" id="language">
+          <option value="English">English</option>
+          <option value="Hebrew">Hebrew</option>
+          <option value="Spanish">spanish</option>
+        </select>
+    </br>
+        <input type="submit" name=save value="Search movies">
+       
+    </form>   
+
+    <form action ="/getMenuPage" method="Get">
+    <input type="submit" name="back" value="back to menu" >
+    </form> 
+</body>
+</html>

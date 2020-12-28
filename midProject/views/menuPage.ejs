@@ -3,13 +3,13 @@
 
     <h1> Menu Page </h1>
     <form action ="/getMenuData" method="POST">
-        <input type="submit" value="Search for movies">
-        <input type="submit" value="Create new movies">
+        <input type="submit" name=search value="Search for movies">
+        <input type="submit" name=create value="Create new movies">
         <% if (user) { %>
            
-            <input type="submit" value="Edit Users">
+            <input type="submit" name=edit value="Edit Users">
         <% } %>
 
     </form>   
 </body>
-</html>
+</html> 

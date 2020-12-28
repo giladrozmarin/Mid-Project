@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h1>Movie Data Page</h1>
+
+        ID: <%=  data.id %> </br>
+        Names: <%=  data.name %> </br>
+        Genres: <%=  data.Genres %> </br>
+        Language: <%=  data.Language %> </br>
+         </br>
+          <% if(data.Picture === undefined ) {null} else {Picture: %>
+        <img src= <%= data.Picture %>> 
+        <%  }  %>
+       </br></br>
+       <a href="http://localhost:3000/getMenuPage"><button>Back to menu</button></a>
+    </body>
+</html>

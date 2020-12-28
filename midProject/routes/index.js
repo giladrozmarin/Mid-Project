@@ -23,15 +23,19 @@ router.post('/getLoginData', async function(req, res, next) {
   let userLogin = {user : req.body.userName, pwd : req.body.password}
   //check the user details in user.json 
   let isAuthenticted  = await checkLogin.authenticationUser(req.body.userName,req.body.password)
-  console.log(  isAuthenticted.length != 0)
-
   //if the user pass authentication pass to menuPage
   isAuthenticted.length != 0 ?
   res.render('menuPage', {user: true }):
   res.render('loginPage', {err :"The user name or password not exist" ,counter : appSession.counter})
  
-
-
 });
+
+
+
+router.get('/getMenuPage', function(req, res, next) {
+  res.render('menuPage', {user: true })
+});
+
+
 
 module.exports = router;

@@ -1,10 +1,1 @@
-{
-    "users": [
-        {
-            "Username": "Admin",
-            "Password": "123",
-            "Created Date": "24.12.2020",
-            "Num Of Transactions": ""
-        }
-    ]
-}
+{"users":[{"Username":"Admin","Password":"123","CreatedDate":"24.12.2020","NumOfTransactions":""},{"Username":"Gilad","Password":"12345","CreatedDate":"24.12.2020","NumOfTransactions":""}]}
