@@ -11,6 +11,7 @@ var menuRouter = require('./routes/menu')
 var menuManage = require('./routes/manage')
 var app = express();
 app.use(session({secret : 'my-secret'}))
+ 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

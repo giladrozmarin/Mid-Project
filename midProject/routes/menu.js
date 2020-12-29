@@ -39,7 +39,7 @@ router.post('/create', function(req, res, next) {
 
 router.get('/edit', async function(req, res, next) {
   let data = await userManagement.getUserList()
-  console.log(data)
+ 
 
   res.render('userManagementPage',{data});
 });
