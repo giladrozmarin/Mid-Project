@@ -14,7 +14,12 @@
 
     <body>
 
+        
+          
         <h1>Search Result Page</h1>
+        <%  if(names.length === 0 )  {%>
+            <h3>not found any result</h3>
+            <%} else {%>
         <table>
             <tr>
                 <th scope="col" >movies</th>
@@ -47,7 +52,8 @@
                 <%  } ) %>  
               
         </table>
-    
+        <%  }  %>  
+        <a href="http://localhost:3000/getMenuPage"><button>Back to menu</button></a>
     </body>
 
 </html>
