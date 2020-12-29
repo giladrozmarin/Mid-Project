@@ -10,39 +10,42 @@
     </style>
 </head>
 
-<body>
+
 
     <body>
-       
-       
+
         <h1>Search Result Page</h1>
         <table>
             <tr>
-                <th>movies</th>
-                <th>movies at same genre</th>
+                <th scope="col" >movies</th>
+                <th scope="col"  >movies at same genre</th>
             </tr>
  
             <%  names.map(v =>  {%>
-            <tr>
+                <tr> 
               <%  if(v.same.length === 0) { %>
-                <th >
-                    <a href="/getMenuData/movieDataPage/id=<%= v.name %>"> <%=v.name %> </a>
-                </th>
+                <td >
+                    <a href="/getMenuData/movieDataPage/id=<%= v.name %>"> <%=v.name %>  </a>
+                </td >
                 <%} else {%>
-                    <th rowspan =0>
+                    <th rowspan= <%= v.same.length +1 %>           >
                         <a href="/getMenuData/movieDataPage/id=<%= v.name %>"> <%=v.name %> </a>
                     </th>
                     <% }%>
-            </tr>
-            
-            <%  v.same.map(v =>  { if(v.length > 0) {%>
-                <tr>
-              
-                    <td >  <a href="/getMenuData/movieDataPage/id=<%= v %>"> <%=v %> </a></td>
-                <%  }} ) %>  
+                    <%  if(v.same.length > 0) {%>
+                    <td  >  <%=v.same.length %> relevant movies </a></td>        
+                </tr>                         
+            <%  v.same.map(v =>   {%>
+               
+                <tr>  
+                    <td  >  <a href="/getMenuData/movieDataPage/id=<%= v %>">  <%=v %> </a></td>
+                </tr>
+                    <%  } ) %>  
+                    <% }else {%>
+                        <td> no relevant movies  </a></td>        
+                        <%  }  %>  
                 <%  } ) %>  
-            </tr>
-        </th>
+              
         </table>
     
     </body>
