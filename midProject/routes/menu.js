@@ -7,8 +7,12 @@ const userManagement = require('../model/userManagement')
 
 
 router.post('/', function(req, res, next) {
-    
-  if (req.body.search !== undefined) {
+//check if you are auth
+ if(!req.session.auth){
+  console.log(req.session)
+  res.redirect('/')
+ } 
+  else if (req.body.search !== undefined) {
      res.render('searchPage',{})}
   else if (req.body.create !== undefined) { 
      res.render('creatPage',{})
@@ -21,7 +25,11 @@ router.post('/', function(req, res, next) {
 });
 /* 4. Search Movies Page */
 router.post('/getSearchResults',  async function(req, res, next) {
-   
+   //check if you are auth
+ if(!req.session.auth){
+  console.log(req.session)
+  res.redirect('/')
+ } 
   const { name,language,genre} = req.body
  
   let data = await searchModel.getSearchResult(name,language,genre)
@@ -30,23 +38,37 @@ router.post('/getSearchResults',  async function(req, res, next) {
 });
 
 router.post('/create', function(req, res, next) {
-
-
+ //check if you are auth
+ if(!req.session.auth){
+  console.log(req.session)
+  res.redirect('/')
+ }
+  
+  let data =req.session.cookie.transactions
+  req.session.cookie.transactions=data
+  console.log(req.session)
   const { name,language,genres} = req.body
   movieModel.createNewMovie(name,language,genres)
-  res.render('menuPage', {user: true })
+  res.render('menuPage', {user: req.session.admin })
 });
 
 router.get('/edit', async function(req, res, next) {
+ //check if you are auth
+ if(!req.session.auth){
+  console.log(req.session)
+  res.redirect('/')
+ }
   let data = await userManagement.getUserList()
- 
-
   res.render('userManagementPage',{data});
 });
 
 
 router.get('/movieDataPage/:id', async function(req, res, next) {
-
+ //check if you are auth
+ if(!req.session.auth){
+  console.log(req.session)
+  res.redirect('/')
+ }
   
   let n = req.url.lastIndexOf('=');
   let data = req.url.substring((n+1)).replace(/%20/g, " ");
@@ -58,6 +80,10 @@ router.get('/movieDataPage/:id', async function(req, res, next) {
  
 
 router.get('/userDataPage/:id', async function(req, res, next) {
+  if(!req.session.auth){
+    console.log(req.session)
+    res.redirect('/')
+   } 
   let n = req.url.lastIndexOf('=');
   let data = req.url.substring((n+1)).replace(/%20/g, " ").split(" ")
   if(data[1] === 'delete')
@@ -71,17 +97,12 @@ router.get('/userDataPage/:id', async function(req, res, next) {
     let obj = await userManagement.getUser(data[0])
     
     res.render('userDataPage',{obj});
-
   }
   else{
     let obj =undefined
     res.render('userDataPage',{obj});
   }
- 
-
-  
 });
-
 
 module.exports = router;
 

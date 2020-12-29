@@ -4,13 +4,28 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session')
+var FileStore = require('session-file-store')(session);
+
+var date = new Date();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var menuRouter = require('./routes/menu')
 var menuManage = require('./routes/manage')
 var app = express();
-app.use(session({secret : 'my-secret'}))
+
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'keyboard cat',
+  resave: true,
+  saveUninitialized: true,
+  rolling: true,
+  store: new FileStore('/home/giladr/Desktop/computer science/WORK/FullStack Ninja/Mid Project/midProject/DataSource/session.json'),
+  cookie :{
+    maxAge:date.setDate(date.getDate() + 1)
+
+  }
+}))
  
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
