@@ -20,7 +20,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true,
   rolling: true,
-  store: new FileStore('/home/giladr/Desktop/computer science/WORK/FullStack Ninja/Mid Project/midProject/DataSource/session.json'),
+  store: new FileStore(),
   cookie :{
     maxAge:date.setDate(date.getDate() + 1)
 
