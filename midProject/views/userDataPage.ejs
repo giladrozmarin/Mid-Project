@@ -7,13 +7,13 @@
            Username: <input name="Username" type="text" value="<%= obj[0].Username %>" >   </br>
            Password: <input name="Password" type="text" value="<%= obj[0].Password %>" >   </br>
            Created Date: <input name="CreatedDate" type="text" value="<%= obj[0].CreatedDate %>" >   </br>
-           Num Of Transactions: <input name="NumOfTransactions" type="text" value="<%= obj[0].NumOfTransactions %>" >   </br>
+           Num Of Transactions: <input name="NumOfTransactions" type="number" value="<%= obj[0].NumOfTransactions %>" >   </br>
            <input type="submit" name=save value="update data">
            <%} else {%>
             Username: <input name="Username" type="text"  >   </br>
             Password: <input name="Password" type="text"  >   </br>
             Created Date: <input name="CreatedDate" type="date" >   </br>
-            Num Of Transactions: <input name="NumOfTransactions" type="text"  >   </br>
+            Num Of Transactions: <input name="NumOfTransactions" type="number"  >   </br>
             <input type="submit" name=save value="Create user">
             <%}%>
         
