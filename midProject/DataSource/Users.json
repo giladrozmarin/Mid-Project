@@ -1,16 +1,1 @@
-{
-    "users": [
-        {
-            "Username": "Admin",
-            "Password": "123",
-            "CreatedDate": "24.12.2020",
-            "NumOfTransactions": ""
-        },
-        {
-            "Username": "Gilad",
-            "Password": "12345",
-            "CreatedDate": "24.12.2020",
-            "NumOfTransactions": "6"
-        }
-    ]
-}
+{"users":[{"Username":"Admin","Password":"123","CreatedDate":"24.12.2020","NumOfTransactions":""},{"Username":"Gilad","Password":"12345","CreatedDate":"24.12.2020","NumOfTransactions":"6"},{}]}
