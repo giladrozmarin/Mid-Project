@@ -1,5 +1,5 @@
 const usersDAL = require('../DAL/usersDAL')
-const userManagement = require('../model/userManagement')
+const userManagement = require('./userManagement')
 
 exports.authenticationUser = async (userName,password) => {
     //get data user list
