@@ -7,11 +7,9 @@ var session = require('express-session')
 var FileStore = require('session-file-store')(session);
 
 var date = new Date();
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var menuRouter = require('./routes/menu')
-var menuManage = require('./routes/manage')
+var menuRouter = require('./routes/menu');
+var manageManage = require('./routes/manage');
+var movieRouter = require('./routes/movie')
 var app = express();
 
 app.set('trust proxy', 1) // trust first proxy
@@ -37,10 +35,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/getMenuData',menuRouter);
-app.use('/userManagement',menuManage)
+app.use('/', menuRouter);
+app.use('/movie',movieRouter);
+app.use('/manage',manageManage)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

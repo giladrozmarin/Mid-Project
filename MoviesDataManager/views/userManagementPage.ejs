@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1>User management page</h1>
+        <dl>
+    <% data.map( v =>{ %>
+        <dt> <%= v %></dt>
+        <dd>  <a href="/manage/userDataPage/id=<%= v %> update"><button>Update</button></a></dd>
+        <dd>   <a href="/manage/userDataPage/id=<%= v %> delete"><button>Delete</button></a></dd>
+      <% }) %>
+    </dl>
+
+      <a href="/manage/userDataPage/id=-1 newUser"><button>Add New User</button></a>
+  </br>
+  <a href="http://localhost:3000/getMenuPage"><button>Back to menu</button></a>
+
+    </body>
+</html>

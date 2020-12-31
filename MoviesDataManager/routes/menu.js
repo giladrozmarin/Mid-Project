@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const checkLogin = require('../model/authentication')
+
 const userManagement = require('../model/userManagement')
+const checkLogin = require('../model/authentication')
 
 /* 1. login Page */
 router.get('/', function (req, res, next) {
@@ -78,6 +79,27 @@ router.get('/getMenuPage', function (req, res, next) {
   res.render('menuPage', { user: req.session.admin })
 });
 
+/* 2. Menu Page handle */
+router.post('/menu', function(req, res, next) {
+//check if you are auth
+ if(!req.session.auth){
+  console.log(req.session)
+  res.redirect('/')
+ } 
+  else if (req.body.search !== undefined) {
+     res.render('searchPage',{})}
+  else if (req.body.create !== undefined) { 
+     res.render('creatPage',{})
+  }
+  else if (req.body.edit !== undefined) { 
+    res.redirect('/manage/edit')
+ }
+     
+ 
+});
+
 
 
 module.exports = router;
+
+

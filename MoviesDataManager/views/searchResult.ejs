@@ -30,11 +30,11 @@
                 <tr> 
               <%  if(v.same.length === 0) { %>
                 <td >
-                    <a href="/getMenuData/movieDataPage/id=<%= v.name %>"> <%=v.name %>  </a>
+                    <a href="/movie/movieDataPage/id=<%= v.name %>"> <%=v.name %>  </a>
                 </td >
                 <%} else {%>
                     <th rowspan= <%= v.same.length +1 %>           >
-                        <a href="/getMenuData/movieDataPage/id=<%= v.name %>"> <%=v.name %> </a>
+                        <a href="/movie/movieDataPage/id=<%= v.name %>"> <%=v.name %> </a>
                     </th>
                     <% }%>
                     <%  if(v.same.length > 0) {%>
@@ -43,7 +43,7 @@
             <%  v.same.map(v =>   {%>
                
                 <tr>  
-                    <td  >  <a href="/getMenuData/movieDataPage/id=<%= v %>">  <%=v %> </a></td>
+                    <td  >  <a href="/movie/movieDataPage/id=<%= v %>">  <%=v %> </a></td>
                 </tr>
                     <%  } ) %>  
                     <% }else {%>
