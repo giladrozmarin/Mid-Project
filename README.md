@@ -6,6 +6,11 @@ A web site for managing Movies data.
 <h3 align="center">
  Client-server architecture
   </h3>
+
+
 <p align="center">
 <img src="./architectureServer.png" width="600" height="350">
   </p>
+ <h6 align="center">
+*click on the image to enlarge
+</h6>
