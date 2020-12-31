@@ -1,4 +1,4 @@
-# Mid-Project
+# Movies Data Manager
 <p align="center">
 A web site for managing Movies data.
   </p>
