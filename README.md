@@ -9,7 +9,7 @@ A web site for managing Movies data.
 
 
 <p align="center">
-<img src="./architectureServer.png" width="600" height="350">
+<img src="./architectureServer.png" width="1300" height="750">
   </p>
  <h6 align="center">
 *click on the image to enlarge
